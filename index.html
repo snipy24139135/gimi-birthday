@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>24 August — For Garima ❤️</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html,body{
+  width:100%;
+  height:100%;
+  background:#080509;
+  color:#fff;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  overflow:hidden;
+}
+
+.page{
+  position:fixed;
+  inset:0;
+  overflow-y:auto;
+  padding:55px 0;
+  opacity:0;
+  visibility:hidden;
+  transform:translateX(45px);
+  transition:.7s ease;
+
+  background:
+    radial-gradient(
+      circle at 50% -10%,
+      #652343 0%,
+      transparent 38%
+    ),
+    linear-gradient(
+      145deg,
+      #080509,
+      #1b0714 55%,
+      #060307
+    );
+}
+
+.page.active{
+  opacity:1;
+  visibility:visible;
+  transform:translateX(0);
+}
+
+.wrap{
+  width:min(1000px,90%);
+  margin:auto;
+}
+
+.center{
+  min-height:calc(100vh - 110px);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+.eyebrow{
+  color:#dc91b1;
+  font-size:11px;
+  letter-spacing:4px;
+  text-transform:uppercase;
+}
+
+.date{
+  color:#f2a3c4;
+  font-size:14px;
+  letter-spacing:10px;
+}
+
+h1{
+  font-size:clamp(52px,11vw,110px);
+  line-height:.94;
+  margin:28px 0;
+}
+
+h1 span,
+h2 span{
+  color:#ff68a9;
+  text-shadow:0 0 30px #ff4d9a35;
+}
+
+h2{
+  font-size:clamp(40px,8vw,76px);
+  line-height:1;
+  margin:25px 0;
+}
+
+.lead{
+  color:#f5dce7;
+  font-size:20px;
+  line-height:1.7;
+}
+
+.wish{
+  max-width:700px;
+  color:#cdb4c1;
+  line-height:1.9;
+  margin-top:25px;
+  font-size:17px;
+}
+
+button{
+  margin-top:35px;
+  padding:16px 30px;
+  border:0;
+  border-radius:100px;
+  color:#fff;
+  background:linear-gradient(
+    135deg,
+    #ff4f9d,
+    #a92867
+  );
+  font-size:16px;
+  font-weight:700;
+  cursor:pointer;
+  box-shadow:0 15px 45px #ff4f9d35;
+  transition:.3s;
+}
+
+button:hover{
+  transform:translateY(-4px);
+}
+
+.intro{
+  max-width:680px;
+  color:#d8bdca;
+  font-size:18px;
+  line-height:1.8;
+}
+
+.qualities{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+  margin-top:45px;
+}
+
+.quality{
+  padding:30px;
+  border:1px solid #ffffff12;
+  border-radius:26px;
+  background:#ffffff08;
+  backdrop-filter:blur(15px);
+}
+
+.number{
+  color:#ff70ad;
+  font-size:11px;
+  letter-spacing:3px;
+}
+
+.quality h3{
+  font-size:25px;
+  margin:15px 0 15px;
+}
+
+.quality p{
+  color:#cdbbc5;
+  line-height:1.8;
+  font-size:16px;
+}
+
+.letterBox{
+  max-width:850px;
+  margin:45px auto 0;
+  padding:42px;
+  border-radius:26px;
+  background:
+    linear-gradient(
+      135deg,
+      #fffafd,
+      #f5e7ed
+    );
+  color:#33242b;
+  line-height:1.9;
+  box-shadow:0 30px 90px #0008;
+}
+
+.letterBox p{
+  margin-bottom:23px;
+}
+
+.signature{
+  color:#a32964;
+  font-weight:700;
+}
+
+.important{
+  max-width:780px;
+  margin:auto;
+  color:#dec7d2;
+  font-size:19px;
+  line-height:1.95;
+}
+
+.important p{
+  margin-bottom:25px;
+}
+
+.lock{
+  font-size:65px;
+  margin-bottom:20px;
+}
+
+.passwordPage input{
+  width:min(380px,90%);
+  margin-top:30px;
+  padding:17px 20px;
+  border-radius:100px;
+  border:1px solid #ffffff20;
+  outline:none;
+  background:#ffffff08;
+  color:#fff;
+  text-align:center;
+  font-size:16px;
+}
+
+.passwordPage input::placeholder{
+  color:#a897a0;
+}
+
+.error{
+  min-height:25px;
+  margin-top:12px;
+  color:#ff82b5;
+}
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:25px;
+  margin-top:45px;
+}
+
+.photo{
+  overflow:hidden;
+  border-radius:25px;
+  border:1px solid #ffffff15;
+  background:#ffffff08;
+  box-shadow:0 20px 60px #0005;
+}
+
+.photo img{
+  width:100%;
+  aspect-ratio:1/1;
+  object-fit:cover;
+  display:block;
+  transition:.6s;
+}
+
+.photo img:hover{
+  transform:scale(1.04);
+}
+
+.photo p{
+  padding:17px;
+  color:#ddc5d0;
+}
+
+.final{
+  max-width:700px;
+  margin:100px auto 40px;
+  text-align:center;
+}
+
+.final p{
+  color:#d4bdc9;
+  font-size:18px;
+  line-height:1.9;
+}
+
+.unknown{
+  margin-top:30px;
+  color:#e86fa7;
+  font-style:italic;
+}
+
+@keyframes floatUp{
+  0%{
+    transform:translateY(0) rotate(0deg);
+    opacity:0;
+  }
+
+  15%{
+    opacity:.6;
+  }
+
+  100%{
+    transform:translateY(-110vh) rotate(360deg);
+    opacity:0;
+  }
+}
+
+@media(max-width:650px){
+
+  .qualities,
+  .gallery{
+    grid-template-columns:1fr;
+  }
+
+  .letterBox{
+    padding:25px;
+  }
+
+  .lead{
+    font-size:17px;
+  }
+
+  .important{
+    font-size:17px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     PAGE 1 — BIRTHDAY WISH
+===================================================== -->
+
+<section class="page active" id="page1">
+
+  <div class="wrap center">
+
+    <div class="date">
+      24 AUGUST
+    </div>
+
+    <div class="eyebrow">
+      A little something made especially for you
+    </div>
+
+    <h1>
+      Happy Birthday,<br>
+      <span>Garima.</span>
+    </h1>
+
+    <div class="wish">
+
+      <p>
+        Happy Birthday to the most special person, Garima.
+      </p>
+
+      <br>
+
+      <p>
+        May your life be filled with endless smiles,
+        peace, and all the love you deserve.
+      </p>
+
+      <br>
+
+      <p>
+        Having you in this world makes it a whole lot
+        brighter and softer.
+      </p>
+
+      <br>
+
+      <p>
+        Here’s to celebrating the wonderful human you are—
+        today and always.
+      </p>
+
+    </div>
+
+    <button onclick="nextPage()">
+      Open this for you ✦
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     PAGE 2 — OPEN MY HEART
+===================================================== -->
+
+<section class="page" id="page2">
+
+  <div class="wrap">
+
+    <div class="eyebrow">
+      FOR GIMI
+    </div>
+
+    <h2>
+      Open My Heart<br>
+      <span>For You.</span>
+    </h2>
+
+    <p class="intro">
+      There are certain things about you that deserve
+      to be said properly.
+    </p>
+
+
+    <div class="qualities">
+
+
+      <!-- SMILE -->
+
+      <article class="quality">
+
+        <div class="number">
+          01
+        </div>
+
+        <h3>
+          😊 SMILE
+        </h3>
+
+        <p>
+          Your smile has this rare quality of making
+          everything around you feel instantly calm and
+          bright. It’s genuinely one of the most beautiful
+          things about you, completely effortless and warm.
+          No matter how tough the day is, just seeing you
+          smile makes the world feel right again. It holds
+          a purity that is so rare to find these days.
+          Never let anything in this world take that
+          priceless smile away from you.
+        </p>
+
+      </article>
+
+
+      <!-- EYES -->
+
+      <article class="quality">
+
+        <div class="number">
+          02
+        </div>
+
+        <h3>
+          👀 EYES
+        </h3>
+
+        <p>
+          Your eyes tell a story without you ever having
+          to say a single word. They carry so much grace,
+          depth, and a subtle innocence that holds anyone's
+          attention instantly. There’s a quiet strength in
+          them, yet they feel so gentle and reassuring to
+          look at. They reflect the beautiful soul you carry
+          inside yourself. Truly, your eyes are one of the
+          most mesmerizing things about you.
+        </p>
+
+      </article>
+
+
+      <!-- HAIR -->
+
+      <article class="quality">
+
+        <div class="number">
+          03
+        </div>
+
+        <h3>
+          💇 HAIR
+        </h3>
+
+        <p>
+          The way your hair frames your face adds such an
+          effortless elegance to your whole presence.
+          Whether it’s tied up casually or left open, it
+          just naturally complements your grace. It adds
+          to that timeless, traditional, and pure aesthetic
+          that makes you look so breathtakingly soft.
+          Every little detail about your look seems to fall
+          into place effortlessly. It’s a subtle detail,
+          but it makes you look uniquely beautiful every
+          single time.
+        </p>
+
+      </article>
+
+
+      <!-- MINDSET -->
+
+      <article class="quality">
+
+        <div class="number">
+          04
+        </div>
+
+        <h3>
+          🧠 MINDSET
+        </h3>
+
+        <p>
+          You possess a mindset that is remarkably strong,
+          independent, and deeply thoughtful. Even when
+          things around you get heavy or chaotic, the way
+          you carry yourself with grace is so inspiring.
+          You think with so much depth and view the world
+          with maturity beyond words. You don't just react;
+          you understand, process, and handle things with
+          genuine poise. That mental strength and clarity
+          of yours is something truly rare and admirable.
+        </p>
+
+      </article>
+
+
+      <!-- NATURE -->
+
+      <article class="quality">
+
+        <div class="number">
+          05
+        </div>
+
+        <h3>
+          🤍 NATURE
+        </h3>
+
+        <p>
+          Your nature is grounded, deeply caring, and
+          profoundly authentic. You have a heart that
+          feels things deeply, and your presence naturally
+          offers a sense of comfort and safety to those
+          around you. You treat people with genuine
+          kindness, never asking for anything in return.
+          There’s no pretense with you—just pure, honest
+          goodness. Being around your gentle spirit feels
+          like a peaceful shelter from the rest of the
+          noisy world.
+        </p>
+
+      </article>
+
+
+      <!-- HEART -->
+
+      <article class="quality">
+
+        <div class="number">
+          06
+        </div>
+
+        <h3>
+          ❤️ HEART
+        </h3>
+
+        <p>
+          You carry a heart made of absolute gold—soft,
+          resilient, and overflowing with pure affection.
+          Even when the world hasn't been the kindest,
+          your heart remains gentle, loving, and protective.
+          You care so selflessly for the people who matter
+          to you, always giving your absolute best. It’s a
+          heart that deserves to be cherished, protected,
+          and loved beyond measure. Having a heart as pure
+          as yours is truly your greatest beauty.
+        </p>
+
+      </article>
+
+    </div>
+
+
+    <div class="center">
+
+      <button onclick="nextPage()">
+        Keep reading →
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     PAGE 3 — MY LETTER
+===================================================== -->
+
+<section class="page" id="page3">
+
+  <div class="wrap">
+
+    <div class="eyebrow">
+      FROM SOMEONE YOU DON'T KNOW
+    </div>
+
+    <h2>
+      A Letter<br>
+      <span>For Gimi.</span>
+    </h2>
+
+
+    <div class="letterBox">
+
+      <p>
+        Dear Gimi,
+      </p>
+
+      <p>
+        Writing this to you today carries a feeling I can
+        barely put into words. From the very beginning,
+        you’ve been someone who stood out without even
+        trying. You are my little kiddo, someone who
+        possesses a rare mix of innocence, strength, and
+        an unmatched sweetness. Your happiness genuinely
+        means the world, and seeing you peaceful and
+        smiling is all that ever truly matters.
+      </p>
+
+      <p>
+        Your presence in life is like a steady anchor—it
+        brings a sense of calm that is hard to explain.
+        This bond, this friendship, and everything we share
+        is something I value more than you’ll ever fully
+        realize. You are not just important; you are
+        irreplaceable. Thank you for simply being you,
+        for your warmth, and for existing as the wonderful
+        person you are. Happy Birthday, Gimi.
+      </p>
+
+      <p class="signature">
+        — Someone who cares ❤️
+      </p>
+
+    </div>
+
+
+    <div class="center">
+
+      <button onclick="nextPage()">
+        One more thing…
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     PAGE 4 — GIMO, YOU MATTER
+===================================================== -->
+
+<section class="page" id="page4">
+
+  <div class="wrap center">
+
+    <div class="eyebrow">
+      SOMETHING I HOPE YOU KNOW
+    </div>
+
+    <h2>
+      Gimo,<br>
+      <span>You Matter.</span>
+    </h2>
+
+
+    <div class="important">
+
+      <p>
+        Gimo, I need you to always remember one thing:
+        you matter so much more than you know. Your
+        happiness, your peace of mind, your dreams, and
+        your well-being are incredibly important. The
+        world is a much better, brighter, and kinder place
+        simply because you are in it. Never let any moment
+        of self-doubt make you forget how truly special,
+        strong, and deeply valued you are. Your presence
+        brings warmth to those around you, and your
+        friendship is a treasure I hold close to my heart.
+        Whatever path you walk, know that you deserve all
+        the love, success, and joy this life has to offer.
+      </p>
+
+    </div>
+
+
+    <button onclick="nextPage()">
+      There's a secret waiting… 🔐
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     PAGE 5 — PASSWORD 1
+===================================================== -->
+
+<section class="page" id="page5">
+
+  <div class="wrap center passwordPage">
+
+    <div class="lock">
+      🔐
+    </div>
+
+    <div class="eyebrow">
+      SECRET ONE
+    </div>
+
+    <h2>
+      Do You Know<br>
+      <span>The Password?</span>
+    </h2>
+
+    <p>
+      If you know it, you know where<br>
+      the next little surprise is.
+    </p>
+
+    <input
+      id="pass1"
+      type="password"
+      placeholder="Enter password"
+    >
+
+    <button onclick="unlockOne()">
+      Unlock ♡
+    </button>
+
+    <div id="error1" class="error"></div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     PAGE 6 — PUBLIC PHOTOS
+===================================================== -->
+
+<section class="page" id="page6">
+
+  <div class="wrap">
+
+    <div class="eyebrow">
+      A FEW MEMORIES
+    </div>
+
+    <h2>
+      For Everyone<br>
+      <span>To See.</span>
+    </h2>
+
+    <p class="intro">
+      Some beautiful moments deserve to be shared.
+    </p>
+
+
+    <div class="gallery">
+
+
+      <!-- PUBLIC PHOTO 1 -->
+
+      <div class="photo">
+
+        <img
+          src="images/public1.jpg"
+          alt="Garima">
+
+        <p>
+          Beautiful moments deserve to stay. ❤️
+        </p>
+
+      </div>
+
+
+      <!-- PUBLIC PHOTO 2 -->
+
+      <div class="photo">
+
+        <img
+          src="images/public2.jpg"
+          alt="Garima">
+
+        <p>
+          A little piece of happiness.
+        </p>
+
+      </div>
+
+
+      <!-- PUBLIC PHOTO 3 -->
+
+      <div class="photo">
+
+        <img
+          src="images/public3.jpg"
+          alt="Garima">
+
+        <p>
+          Just Gimi being Gimi. ✨
+        </p>
+
+      </div>
+
+
+      <!-- PUBLIC PHOTO 4 -->
+
+      <div class="photo">
+
+        <img
+          src="images/public4.jpg"
+          alt="Garima">
+
+        <p>
+          One more memory worth keeping.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="center">
+
+      <button onclick="nextPage()">
+        But there's one more secret… 🔒
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     PAGE 7 — PASSWORD 2
+===================================================== -->
+
+<section class="page" id="page7">
+
+  <div class="wrap center passwordPage">
+
+    <div class="lock">
+      🔒
+    </div>
+
+    <div class="eyebrow">
+      THE LAST SECRET
+    </div>
+
+    <h2>
+      Only <span>For Gimo.</span>
+    </h2>
+
+    <p>
+      This part isn't for everyone.<br>
+      Only someone who knows the second password gets in.
+    </p>
+
+    <input
+      id="pass2"
+      type="password"
+      placeholder="Second password"
+    >
+
+    <button onclick="unlockTwo()">
+      Open the secret ♡
+    </button>
+
+    <div id="error2" class="error"></div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     PAGE 8 — PERSONAL PHOTOS + FINAL MESSAGE
+===================================================== -->
+
+<section class="page" id="page8">
+
+  <div class="wrap">
+
+    <div class="eyebrow">
+      JUST BETWEEN US
+    </div>
+
+    <h2>
+      Gimo's<br>
+      <span>Little Secret.</span>
+    </h2>
+
+    <p class="intro">
+      These memories stay in this little corner.
+    </p>
+
+
+    <div class="gallery">
+
+
+      <!-- PERSONAL PHOTO 1 -->
+
+      <div class="photo">
+
+        <img
+          src="images/personal1.jpg"
+          alt="Personal memory">
+
+        <p>
+          A memory only we understand. ❤️
+        </p>
+
+      </div>
+
+
+      <!-- PERSONAL PHOTO 2 -->
+
+      <div class="photo">
+
+        <img
+          src="images/personal2.jpg"
+          alt="Personal memory">
+
+        <p>
+          One of my favourite moments.
+        </p>
+
+      </div>
+
+
+      <!-- PERSONAL PHOTO 3 -->
+
+      <div class="photo">
+
+        <img
+          src="images/personal3.jpg"
+          alt="Personal memory">
+
+        <p>
+          Keep this one close.
+        </p>
+
+      </div>
+
+
+      <!-- PERSONAL PHOTO 4 -->
+
+      <div class="photo">
+
+        <img
+          src="images/personal4.jpg"
+          alt="Personal memory">
+
+        <p>
+          And this one too. ❤️
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- FINAL MESSAGE -->
+
+    <div class="final">
+
+      <div class="eyebrow">
+        ONE LAST THING
+      </div>
+
+      <h2>
+        HAPPY BIRTHDAY<br>
+        <span>GIMO ❤️</span>
+      </h2>
+
+      <p>
+        "Someone thought you were worth all this effort."
+      </p>
+
+      <div class="unknown">
+        — Someone you'll know someday.
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<script>
+
+/* ===============================
+   PASSWORDS
+================================ */
+
+const PASSWORD_ONE = "gimo2402";
+const PASSWORD_TWO = "Gimomine";
+
+
+/* ===============================
+   PAGE SYSTEM
+================================ */
+
+let currentPage = 1;
+
+function showPage(number){
+
+  document
+    .querySelectorAll(".page")
+    .forEach(function(page){
+
+      page.classList.remove("active");
+
+    });
+
+
+  const page =
+    document.getElementById(
+      "page" + number
+    );
+
+
+  if(page){
+
+    page.classList.add("active");
+
+    currentPage = number;
+
+    page.scrollTop = 0;
+
+  }
+
+}
+
+
+function nextPage(){
+
+  if(currentPage === 4){
+
+    showPage(5);
+
+    return;
+
+  }
+
+
+  if(currentPage === 6){
+
+    showPage(7);
+
+    return;
+
+  }
+
+
+  if(currentPage < 8){
+
+    showPage(currentPage + 1);
+
+  }
+
+}
+
+
+/* ===============================
+   PASSWORD 1
+================================ */
+
+function unlockOne(){
+
+  const password =
+    document
+      .getElementById("pass1")
+      .value
+      .trim();
+
+
+  const error =
+    document.getElementById("error1");
+
+
+  if(password === PASSWORD_ONE){
+
+    error.textContent = "";
+
+    showPage(6);
+
+  }
+
+  else{
+
+    error.textContent =
+      "Wrong password. ❤️";
+
+  }
+
+}
+
+
+/* ===============================
+   PASSWORD 2
+================================ */
+
+function unlockTwo(){
+
+  const password =
+    document
+      .getElementById("pass2")
+      .value
+      .trim();
+
+
+  const error =
+    document.getElementById("error2");
+
+
+  if(password === PASSWORD_TWO){
+
+    error.textContent = "";
+
+    showPage(8);
+
+  }
+
+  else{
+
+    error.textContent =
+      "That's not the secret. ❤️";
+
+  }
+
+}
+
+
+/* ===============================
+   ENTER KEY
+================================ */
+
+document
+  .getElementById("pass1")
+  .addEventListener(
+    "keydown",
+    function(event){
+
+      if(event.key === "Enter"){
+
+        unlockOne();
+
+      }
+
+    }
+  );
+
+
+document
+  .getElementById("pass2")
+  .addEventListener(
+    "keydown",
+    function(event){
+
+      if(event.key === "Enter"){
+
+        unlockTwo();
+
+      }
+
+    }
+  );
+
+
+/* ===============================
+   FLOATING HEARTS
+================================ */
+
+function createParticle(){
+
+  const particle =
+    document.createElement("div");
+
+
+  particle.textContent =
+    ["♡","✦","✧","♥"][
+      Math.floor(
+        Math.random() * 4
+      )
+    ];
+
+
+  particle.style.position = "fixed";
+
+  particle.style.left =
+    Math.random() * 100 + "vw";
+
+  particle.style.bottom =
+    "-30px";
+
+  particle.style.color =
+    "#ff6ba9";
+
+  particle.style.opacity =
+    ".55";
+
+  particle.style.fontSize =
+    14 + Math.random() * 22 + "px";
+
+  particle.style.pointerEvents =
+    "none";
+
+  particle.style.zIndex =
+    "999";
+
+  particle.style.animation =
+    "floatUp 7s linear forwards";
+
+
+  document.body.appendChild(
+    particle
+  );
+
+
+  setTimeout(
+    function(){
+
+      particle.remove();
+
+    },
+    7000
+  );
+
+}
+
+
+setInterval(
+  createParticle,
+  850
+);
+
+</script>
+
+</body>
+</html>
